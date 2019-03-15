@@ -62,18 +62,18 @@ def average_distance(point, chosen_cluster):
     for remaining_points in chosen_cluster:
         sum+=np.sum(np.abs(remaining_points[0]-point[0]))
         
-    return sum/(len(chosen_cluster)-1)
+    return sum
 
 def max_point_index(chosen_cluster):
     point_index=0
     distances=list(np.zeros(len(test_cluster)))    
     for point_index in range(len(test_cluster)):
-        distances[point_index]=average_distance(test_cluster[point_index], test_cluster)
+        distances[point_index]=average_distance(test_cluster[point_index], test_cluster)/(len(old_cluster)-1)
     max_distance_index=np.argmax(distances)
     return max_distance_index
 
 new_cluster=[]
-test_cluster=copy.deepcopy(cluster[14])
+
 point=test_cluster[6]
 def new_clusters(test_cluster):
     new_cluster=[]
@@ -85,21 +85,39 @@ def new_clusters(test_cluster):
 
 old_cluster,new_cluster=new_clusters(test_cluster)
 def cluster_difference(point, old_cluster, new_cluster):
-    return average_distance(point, old_cluster)-average_distance(point, new_cluster)
+    return (average_distance(point, old_cluster)/(len(old_cluster)-1)-average_distance(point, new_cluster)/(len(new_cluster)))
 
 max_value=0
 temp_diff=0
 temp_index=0
-old_cluster=[], new_cluster=[]
+old_cluster=[]
+new_cluster=[]
+"""
 for i in range(len(test_cluster)):
     if i==0:
         old_cluster,new_cluster=new_clusters(test_cluster)
         continue
-    cluster_difference=cluster_difference(old_cluster[i], old_cluster, new_cluster)
-    if temp_diff>cluster_difference:
-        temp_diff=cluster_difference
+    cluster_diff=cluster_difference(old_cluster[i], old_cluster, new_cluster)
+    if temp_diff>cluster_diff:
+        temp_diff=cluster_diff
         temp_index=i
-    
+        """
+test_cluster=copy.deepcopy(cluster[14])
+temp_old_cluster, temp_new_cluster = new_clusters(test_cluster)
+old_cluster = copy.deepcopy(temp_old_cluster)
+new_cluster = copy.deepcopy(temp_new_cluster) 
+
+while True: 
+    temp_index=0       
+    for i in range(len(old_cluster)):        
+        cluster_diff=cluster_difference(old_cluster[i], old_cluster, new_cluster)
+        if temp_diff<cluster_diff:
+            temp_diff=cluster_diff
+            temp_index=i
+    if temp_diff==0:
+        break    
+    new_cluster.append(old_cluster[temp_index])
+    old_cluster.pop(temp_index)    
     
                 
 
