@@ -43,11 +43,11 @@ published as dendrograms:
 
 2. ***Complete Link***
 
-![Complete Link](https://github.com/aditya-srikanth/Clustering-Systems/blob/master/Hierarchical%20Clustering/agglomerative-complete-link-dendrogram.png)
+![Complete Link](https://github.com/nsurampu/Clustering-Systems/blob/master/Hierarchical%20Clustering/Agglomerative/agglomerative-complete-link-dendrogram.png)
 
 3. ***Group Average***
 
-![Group Average](https://github.com/aditya-srikanth/Clustering-Systems/blob/master/Hierarchical%20Clustering/agglomerative-group-average-dendrogram.png)
+![Group Average](https://github.com/nsurampu/Clustering-Systems/blob/master/Hierarchical%20Clustering/Agglomerative/agglomerative-single-link-dendrogram.png)
 
 ### Libraries Used
 1. Numpy
