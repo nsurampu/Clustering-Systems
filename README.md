@@ -39,7 +39,7 @@ published as dendrograms:
 
 1. ***Single Link***
 
-![Single Link](https://github.com/aditya-srikanth/Clustering-Systems/blob/master/Hierarchical%20Clustering/agglomerative-single-link-dendrogram.png)
+![Single Link](https://github.com/nsurampu/Clustering-Systems/blob/master/Hierarchical%20Clustering/Agglomerative/agglomerative-single-link-dendrogram.png)
 
 2. ***Complete Link***
 
