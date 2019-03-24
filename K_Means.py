@@ -70,10 +70,11 @@ for epoch in range(epochs):
                 mode_index=np.argmax(cluster_sum[0][index])
                 feature_centers[centroid][index][mode_index]=1
                 
-                
+s=0                
 for centroid in range(num_cluster_centers):
     print(len(cluster[centroid]))
-    
+    s+=len(cluster[centroid])
+print(s) 
 point=[cluster[3][4]]
 a=[cluster[3][4]]
 a!=point
