@@ -321,11 +321,13 @@ if __name__ == "__main__":
 
     linkage_matrix = agglomerative.clustering(matrix, c_flag)[1]
 
-    pprint(linkage_matrix)
-
     l_file = open(link + ".pkl", 'wb')
+    # l_file = open(link + ".pkl", 'rb')
     pickle.dump(linkage_matrix, l_file)
+    # linkage_matrix = pickle.load(l_file)
     l_file.close()
+
+    pprint(linkage_matrix)
 
     fig = plt.figure(figsize=(8, 4))
     dendrogram = dendrogram(linkage_matrix)   # Draw dendrogram of final clusters.
