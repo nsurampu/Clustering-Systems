@@ -7,7 +7,7 @@ This repository contains implementations of **K-Means Clustering** and
 
 ### Hierarchical Clustering
 
-The current hierarchical clustering algorithms uses **agglomeration** to create the
+The current hierarchical clustering algorithms uses **agglomeration** and **division** to create the
 clusters and uses the following linkages:
 1. Single Link (MIN)
 2. Complete Link (MAX)
@@ -16,16 +16,7 @@ clusters and uses the following linkages:
 The agglomerative hierarchical clustering script is divided into two classes:
 1. Agglomerative_Hierarchical
 2. Proximity_Matrix
-
-These are further divided as:
-1. ***matrix_min()***: Returns the current minimum value in the passed matrix.
-2. ***min_cluster_distance()***: Returns the minimum distance between clusters.
-3. ***max_cluster_distance()***: Returns the maximum distance between clusters.
-4. ***avg_cluster_distance()***: Returns the average distance between clusters.
-5. ***matrix_gen()***: Generates a new proximity matrix after cluster formation.
-6. ***clustering()***: Clusters points agglomeratively and returns the linkage matrix.
-7. ***distance()***: Calculates distance between points.
-8. ***raw_matrix()***: Generates the proximity matrix for the first time from data.
+3. Divisive_Hierarchical
 
 ### Results
 
@@ -34,6 +25,7 @@ published as dendrograms:
 
 **K-Means Clustering**
 
+The K-means algorithm currently clusters the sequences into 311 clusters.
 
 **Hierarchical clustering**:
 
@@ -49,6 +41,10 @@ published as dendrograms:
 
 ![Group Average](https://github.com/nsurampu/Clustering-Systems/blob/master/Hierarchical%20Clustering/Agglomerative/agglomerative-single-link-dendrogram.png)
 
+4. ***DIANA***
+
+![DIANA](https://github.com/nsurampu/Clustering-Systems/blob/master/Hierarchical%20Clustering/DIANA/DIANA-dendrogram.png)
+
 ### Libraries Used
 1. Numpy
 2. Scipy
@@ -57,5 +53,5 @@ published as dendrograms:
 ### Authors
 
 ![Naren Surampudi](https://github.com/nsurampu/)
-![Aditya Srikanth]
-![Prateek Das Gupta]
+<br>![Aditya Srikanth]
+<br>![Prateek Das Gupta]
